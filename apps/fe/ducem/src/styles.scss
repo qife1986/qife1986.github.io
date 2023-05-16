@@ -1,0 +1,11 @@
+@import 'index';
+
+.fl-row{
+    display: flex;
+    flex-direction: row;
+}
+
+.fl-col{
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,74 @@
+@mixin edge-side($attribute, $list, $secondList) {
+  @each $n1, $n2 in $list {
+    @each $segment, $val in $secondList {
+      &-#{$n1}-#{$segment} {
+        #{$attribute}-#{$n2}: $val;
+      }
+    }
+  }
+}
+
+@mixin edge-all($attribute, $list) {
+  @each $name, $val in $list {
+    &-#{$name} {
+      #{$attribute}: $val;
+    }
+  }
+}
+@mixin edge-vertical($attribute, $list) {
+  @each $name, $val in $list {
+    &-y-#{$name} {
+      #{$attribute}-top: $val;
+      #{$attribute}-bottom: $val;
+    }
+  }
+}
+@mixin edge-horizontal($attribute, $list) {
+  @each $name, $val in $list {
+    &-x-#{$name} {
+      #{$attribute}-left: $val;
+      #{$attribute}-right: $val;
+    }
+  }
+}
+//MARGIN & PADDING START
+$edge-classes: (
+  bottom: bottom,
+  top: top,
+  left: left,
+  right: right,
+);
+$edge-segments: (
+  xs: 0.25em,
+  s: 0.5em,
+  sm: 0.75em,
+  m: 1em,
+  ml: 1.25em,
+  l: 1.5em,
+  xl: 1.75em,
+  xxl: 2em,
+);
+
+%margin {
+  @include edge-side(
+    $attribute: 'margin',
+    $list: $edge-classes,
+    $secondList: $edge-segments
+  );
+  @include edge-all($attribute: 'margin', $list: $edge-segments);
+  @include edge-vertical($attribute: 'margin', $list: $edge-segments);
+  @include edge-horizontal($attribute: 'margin', $list: $edge-segments);
+}
+
+%padding {
+  @include edge-side(
+    $attribute: 'padding',
+    $list: $edge-classes,
+    $secondList: $edge-segments
+  );
+  @include edge-all($attribute: 'padding', $list: $edge-segments);
+  @include edge-vertical($attribute: 'padding', $list: $edge-segments);
+  @include edge-horizontal($attribute: 'padding', $list: $edge-segments);
+}
+
+//MARGIN & PADDING END

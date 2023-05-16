@@ -1,0 +1,64 @@
+@use 'index';
+
+.nav {
+  @extend %padding-x-m;
+  @extend %padding-top-xs;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  &-logo {
+    width: 13em;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    &__icon {
+      width: 13em;
+    }
+    &__underline {
+      position: absolute;
+      bottom: -0.55em;
+      left: 0;
+      width: 11em;
+    }
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    border-bottom: solid 1em rgb(51, 51, 51);
+    width: 100%;
+    left: 0;
+    bottom: -0.55em;
+  }
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  @extend %padding-top-m;
+  font-size: 1.2em;
+  font-weight: 500;
+  .footer-col {
+    min-width: 10em;
+    text-align: center;
+  }
+  .footer-link {
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+  }
+}
+
+@media (min-width: 50rem) {
+  .footer-wrp {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    .footer-links {
+      width: 50%;
+      justify-content: space-around;
+    }
+  }
+}

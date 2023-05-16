@@ -1,0 +1,21 @@
+//Z-INDEX START
+
+%index {
+  &__app-root {
+    z-index: 0;
+  }
+  &__view {
+    z-index: 100;
+  }
+  &__nav-menu {
+    z-index: 9997;
+  }
+  &__loader,
+  &__cookies {
+    z-index: 9998;
+  }
+  &__app_init {
+    z-index: 9999;
+  }
+}
+//Z-INDEX END

@@ -1,0 +1,7 @@
+@use 'placeholders' as pl ;
+@use 'colors' as cl ;
+[data-theme='default'] {
+  --btn: #{cl.$blue-light};
+  --btn-txt: #{cl.$white};
+  --txt: #{cl.$grey-dark};
+}

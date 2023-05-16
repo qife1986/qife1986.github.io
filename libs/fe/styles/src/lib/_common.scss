@@ -1,0 +1,41 @@
+@import 'placeholders' ;
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  height: -webkit-fill-available;
+  width: 100%;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  /* mobile viewport bug fix */
+  min-height: -webkit-fill-available;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Hind', Arial, Helvetica, sans-serif;
+  /* Disable Selection of text in all elements */
+  *:not(input):not(textarea) {
+    @extend %no-select;
+  }
+}
+
+%no-select {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                      supported by Chrome, Opera and Firefox */
+}

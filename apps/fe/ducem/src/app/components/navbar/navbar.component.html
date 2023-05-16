@@ -1,0 +1,32 @@
+<div class="nav">
+  <div class="nav-logo">
+    <div
+      class="nav-logo__icon"
+      [inlineSVG]="'/assets/media/images/svg/ducem.svg'"
+    ></div>
+    <div
+      class="nav-logo__underline"
+      [inlineSVG]="'/assets/media/images/svg/ducem_logo_bottom.svg'"
+    ></div>
+  </div>
+  <div class="nav-items desktop">
+    <div class="nav-item">Technologie</div>
+    <div class="nav-item">Anwendungen</div>
+    <div class="nav-item">Produkte</div>
+    <div class="nav-item">Lesitungen</div>
+    <div class="nav-item">Unternehmen</div>
+  </div>
+  <div
+    class="menu__icon mobile"
+    (click)="onClickMenuIcon(menuBody)"
+    [inlineSVG]="'/assets/media/images/svg/menu_hamburger.svg'"
+  ></div>
+</div>
+
+<div #menuBody class="nav-menu mobile">
+  <div class="nav-item">Technologie</div>
+  <div class="nav-item">Anwendungen</div>
+  <div class="nav-item">Produkte</div>
+  <div class="nav-item">Lesitungen</div>
+  <div class="nav-item">Unternehmen</div>
+</div>
