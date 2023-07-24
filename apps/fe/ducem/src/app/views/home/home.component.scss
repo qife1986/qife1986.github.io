@@ -5,8 +5,9 @@
   width: 100%;
 }
 
-.overlay-pattern {
+.overlay__pattern {
   background-color: rgb(51, 51, 51);
+
   img {
     height: 13em;
     width: 100%;
@@ -14,11 +15,12 @@
   }
 }
 
-.home-main {
+.home__main {
   position: relative;
   display: flex;
   flex-direction: column;
-  &-img {
+
+  &__img {
     img {
       @extend %margin-top-m;
       width: 100%;
@@ -27,9 +29,22 @@
     }
   }
 
+  &__body {
+    background-color: rgb(0 0 0 / 42%);
+    @extend %padding-m;
+    border-radius: 0.5em;
+  }
+
   &__upper {
     background-color: rgb(51, 51, 51);
     @extend %padding-x-sm;
+    @extend %padding-y-m;
+
+    background-image: url(/assets/media/images/webp/molecules.webp);
+    background-position-y: center;
+    background-repeat: no-repeat;
+    background-blend-mode: lighten;
+    background-size: cover;
   }
 
   &__bottom {
@@ -40,9 +55,11 @@
     height: 100%;
     min-height: 13em;
     background-color: rgb(10, 53, 121);
+
     &-top {
       min-height: 10em;
     }
+
     &-bottom {
       display: flex;
       flex-direction: column;
@@ -50,10 +67,35 @@
   }
 }
 
+
+.brochure {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+ 
+
+  &__body {
+    @extend %padding-m;
+    border-radius: 0.5em;
+     &__img {
+    img {
+      @extend %margin-top-m;
+      width: 100%;
+      border-radius: 0.5em;
+      max-width: 70em;
+    }
+  }
+  }
+
+}
+
 .title-l,
 .title-m {
   color: #fff;
+  font-weight: 500;
 }
+
 .title-l {
   font-size: 1.45em;
 }
@@ -67,7 +109,8 @@
   justify-content: center;
   @extend %padding-top-m;
   @extend %padding-bottom-l;
-  .support-badge {
+
+  .support__badge {
     height: 3.5em;
     @extend %margin-x-s;
     @extend %margin-y-s;
@@ -86,19 +129,61 @@
   }
 }
 
+.screen__xl_confinment {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.team {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(204, 204, 204);
+  @extend %padding-y-m;
+
+  &__title {
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.6em;
+    background-color: rgb(0 0 0 / 42%);
+    color: #fff;
+    @extend %margin-x-m;
+    border-radius: 0.5em;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+
+
+
+    &__img {
+      @extend %padding-x-m;
+
+      img {
+        @extend %margin-top-m;
+        width: 100%;
+        border-radius: 0.5em;
+        max-width: 70em;
+      }
+    }
+  }
+}
+
 @media (min-width: 50rem) {
-  .overlay-pattern {
+  .overlay__pattern {
     img {
       object-fit: fill;
     }
   }
 
-  .home-main {
-    &-img {
+  .home__main {
+    &__img {
       img {
         width: 100%;
         width: 45vw;
-        max-width: 35em;
+        max-width: 30em;
       }
     }
 
@@ -106,12 +191,43 @@
       font-size: 1.4em;
       display: flex;
       flex-direction: row;
-      justify-content: center;
+      justify-content: space-around;
     }
 
-    &-body {
+    &__body {
+      background-color: rgba(0, 0, 0, 0);
       padding-top: 1.5rem;
       padding-right: 3rem;
+    }
+  }
+
+  .title-l,
+  .title-m {
+    color: rgb(10, 53, 121);
+  }
+
+  .screen__xl_confinment {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .team {
+    &__title {
+      font-size: 1.45em;
+      color: rgb(10, 53, 121);
+      background-color: rgba(0, 0, 0, 0);
+    }
+
+    &__body {
+      max-width: 85em;
+
+
+
+      &__img {
+        img {
+          max-width: 50em;
+        }
+      }
     }
   }
 }

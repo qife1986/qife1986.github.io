@@ -11,7 +11,13 @@ import { HttpClientModule } from '@angular/common/http';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent {
-  onClickMenuIcon(menuBody:HTMLDivElement) {
+  onClickMenuIcon(menuBody: HTMLDivElement) {
+
+    if (document.body.style.overflow == 'hidden') {
+      document.body.style.overflow = 'initial';
+    } else {
+      document.body.style.overflow = 'hidden';
+    }
     menuBody.classList.toggle("nav-menu-visible")
   }
 }
