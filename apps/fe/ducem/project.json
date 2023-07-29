@@ -14,6 +14,7 @@
         "index": "apps/fe/ducem/src/index.html",
         "main": "apps/fe/ducem/src/main.ts",
         "polyfills": ["zone.js"],
+        "baseHref": "/ducem/",
         "tsConfig": "apps/fe/ducem/tsconfig.app.json",
         "assets": ["apps/fe/ducem/src/assets"],
         "styles": ["apps/fe/ducem/src/styles.scss"],
@@ -36,6 +37,7 @@
               "maximumError": "4kb"
             }
           ],
+          "baseHref": "/ducem/",
           "outputHashing": "all"
         },
         "development": {
